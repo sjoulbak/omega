@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  soortcode: 1
+  cursussoort: MyString
+  prijs: 1
+
+two:
+  soortcode: 1
+  cursussoort: MyString
+  prijs: 1
