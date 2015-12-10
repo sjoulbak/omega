@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
   # GET /users
   # GET /users.json
@@ -26,14 +27,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      redirect_to(:users, notice: 'User was successfully created')
+    else
+      format.html { render :new }
+      format.json { render json: @user.errors, status: :unprocessable_entity }
     end
   end
 
