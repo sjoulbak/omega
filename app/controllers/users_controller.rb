@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:index, :new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :toggle_admin]
+  before_action :require_admin, only: [:index, :destroy, :toggle_admin]
+  before_action :require_not_logged_in_or_admin, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to(:users, notice: 'User was successfully created')
+      redirect_to root_path, notice: 'User was successfully created'
     else
       format.html { render :new }
       format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -57,6 +59,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_admin
+    @user.toggle!(:admin)
+    redirect_to users_url
   end
 
   private
