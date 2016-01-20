@@ -18,7 +18,11 @@
         <td><%= course.begindatum %></td>
         <td><%= course.einddatum %></td>
         <% if !current_user.nil? %>
-          <td><%= course.users.include?(current_user) ? 'Ja' : 'Nee' %></td>
+          <% if current_user.admin? %>
+            <td><%= pluralize(course.course_users.count, 'user') %></td>
+          <% else %>
+            <td><%= course.users.include?(current_user) ? 'Ja' : 'Nee' %></td>
+          <% end %>
         <% end %>
         <td><%= link_to 'Show', course %></td>
         <% if !current_user.nil? %>

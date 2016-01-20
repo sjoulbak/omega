@@ -9,8 +9,42 @@
 </p>
 
 <% if !current_user.nil? %>
+  <% if !current_user.admin? %>
+    <% if current_user.courses.include?(@course) %>
+        <%= form_for [@course, @course.course_users.build] do |f| %>
+          <%= f.submit "Afmelden" %>
+        <% end %>
+    <% else %>
+      <%= form_for [@course, @course.course_users.build] do |f| %>
+        <%= f.submit "Aanmelden" %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <!-- Als admin mag jij je niet inschrijven -->
+    <!-- Dit kan echter wel met een POST request -->
+  <% end %>
+
   <% if current_user.admin? %>
+    <h1>Listing Course Users(<%= @course.course_users.count %>)</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @course.course_users.each_with_index do |course_user, idx| %>
+          <tr>
+            <td><%= "#{idx + 1}. #{course_user.user.email}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
     <%= link_to 'Edit', edit_course_path(@course) %> |
   <% end %>
 <% end %>
+
 <%= link_to 'Back', courses_path %>

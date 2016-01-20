@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  resources :courses do
+    resources :course_users
+  end
+
   resources :user_sessions
   resources :users
-  resources :courses
   resources :employees
 
   get 'contacts' => 'pages#contacts', :as => :contacts
