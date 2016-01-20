@@ -1,0 +1,16 @@
+<p>
+  <strong>Begin datum:</strong>
+  <%= @course.begindatum %>
+</p>
+
+<p>
+  <strong>Eind datum:</strong>
+  <%= @course.einddatum %>
+</p>
+
+<% if !current_user.nil? %>
+  <% if current_user.admin? %>
+    <%= link_to 'Edit', edit_course_path(@course) %> |
+  <% end %>
+<% end %>
+<%= link_to 'Back', courses_path %>

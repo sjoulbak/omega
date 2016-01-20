@@ -10,6 +10,13 @@
 
   <div id="nav">
     <%= link_to "home", root_path %>
+    <%= link_to "courses", courses_path %>
+    <% if !current_user.nil? %>
+      <% if current_user.admin? %>
+        <%= link_to "users", users_path %>
+        <%= link_to "employees", employees_path %>
+      <% end %>
+    <% end %>
     <%= link_to "contacts", contacts_path %>
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
