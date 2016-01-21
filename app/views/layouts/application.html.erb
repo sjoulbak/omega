@@ -21,8 +21,9 @@
           <li><%= link_to "Logout", :logout, method: :post %></li>
         <% else %>
           <li><%= nav_link "Register", register_path %></li>
-          <li><%= link_to "Login", :login %></li>
+          <li><%= nav_link "Login", login_path %></li>
         <% end %>
+        <li><div id="title">Omega</div></li>
       </ul>
     </nav>
 
