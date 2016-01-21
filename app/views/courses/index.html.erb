@@ -1,45 +1,47 @@
 <h1>Listing courses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Begindatum</th>
-      <th>Einddatum</th>
-      <% if !current_user.nil? %>
-        <th>Ingeschreven</th>
-      <% end %>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
+<br>
+<div class="context">
+  <table>
+    <thead>
       <tr>
-        <td><%= course.begindatum %></td>
-        <td><%= course.einddatum %></td>
+        <th>Begindatum</th>
+        <th>Einddatum</th>
         <% if !current_user.nil? %>
-          <% if current_user.admin? %>
-            <td><%= pluralize(course.course_users.count, 'user') %></td>
-          <% else %>
-            <td><%= course.users.include?(current_user) ? 'Ja' : 'Nee' %></td>
+          <th>Ingeschreven</th>
+        <% end %>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.begindatum %></td>
+          <td><%= course.einddatum %></td>
+          <% if !current_user.nil? %>
+            <% if current_user.admin? %>
+              <td><%= pluralize(course.course_users.count, 'user') %></td>
+            <% else %>
+              <td><%= course.users.include?(current_user) ? 'Ja' : 'Nee' %></td>
+            <% end %>
+          <% end %>
+          <td><%= link_to 'Show', course %></td>
+          <% if !current_user.nil? %>
+            <% if current_user.admin? %>
+              <td><%= link_to 'Edit', edit_course_path(course) %></td>
+              <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
         <% end %>
-        <td><%= link_to 'Show', course %></td>
-        <% if !current_user.nil? %>
-          <% if current_user.admin? %>
-            <td><%= link_to 'Edit', edit_course_path(course) %></td>
-            <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        </tr>
       <% end %>
-      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if !current_user.nil? %>
+    <% if current_user.admin? %>
+      <%= link_to 'New Course', new_course_path %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if !current_user.nil? %>
-  <% if current_user.admin? %>
-    <%= link_to 'New Course', new_course_path %>
   <% end %>
-<% end %>
+</div>

@@ -8,29 +8,52 @@
   </head>
   <body>
 
-  <div id="nav">
-    <%= link_to "home", root_path %>
-    <%= link_to "courses", courses_path %>
-    <% if !current_user.nil? %>
-      <% if current_user.admin? %>
-        <%= link_to "users", users_path %>
-        <%= link_to "employees", employees_path %>
-      <% end %>
-    <% end %>
-    <%= link_to "contacts", contacts_path %>
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", register_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  <%= yield %>
+  <header class="container">
+    <nav>
+      <ul id="navlist">
+        <% if flash[:notice] %>
+          <li><div id="notice"><%= flash[:notice] %></div></li>
+        <% elsif  flash[:alert] %>
+          <li><div id="alert"><%= flash[:alert] %></div></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= nav_link "Edit Profile", edit_user_path(current_user.id) %></li>
+          <li><%= link_to "Logout", :logout, method: :post %></li>
+        <% else %>
+          <li><%= nav_link "Register", register_path %></li>
+          <li><%= link_to "Login", :login %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+
+  </header>
+
+  <section class="container">
+    <div class="sidebar1">
+      <div id="sidebarmenu">
+        <ul>
+          <li><%= nav_link "Home", root_path %></li>
+          <li><%= nav_link "Courses", courses_path %></li>
+          <% if !current_user.nil? %>
+            <% if current_user.admin? %>
+              <li><%= nav_link "Users", users_path %></li>
+              <li><%= nav_link "Employees", employees_path %></li>
+            <% end %>
+          <% end %>
+          <li><%= nav_link "Contacts", contacts_path %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <p><%= yield %></p>
+    </div>
+  </section>
+
+  <footer class="container">
+    <p>Copyright &copy; Omega. All rights reserved.
+  </footer>
 
   </body>
 </html>
