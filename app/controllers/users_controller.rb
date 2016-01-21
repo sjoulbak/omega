@@ -4,28 +4,25 @@ class UsersController < ApplicationController
   before_action :require_not_logged_in_or_admin, only: [:new, :create]
   skip_before_action :require_login, only: [:new, :create]
 
-  # GET /users
-  # GET /users.json
+  # This method is used for the index users page
   def index
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # This method is used for the show user page
   def show
   end
 
-  # GET /users/new
+  # This method is used for the new user page
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
+  # This method is used for the edit user page
   def edit
   end
 
-  # POST /users
-  # POST /users.json
+  # This method will be trigged if there is a post request with the create method
   def create
     @user = User.new(user_params)
 
@@ -36,8 +33,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
+# This method will be trigged if there is a post request with the update method
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -49,8 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  # This method will be trigged if there is a post request with the destroy method
   def destroy
     @user.destroy
     respond_to do |format|
