@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :toggle_admin]
   before_action :require_admin, only: [:index, :destroy, :toggle_admin]
   before_action :require_not_logged_in_or_admin, only: [:new, :create]
+  before_action :check_user, only: [:show, :edit, :update]
   skip_before_action :require_login, only: [:new, :create]
 
   # This method is used for the index users page
@@ -63,6 +64,12 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def check_user
+      if !current_user.admin?
+        redirect_to(users_path, alert: 'Geen bevoegdheid') if current_user != @user
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
