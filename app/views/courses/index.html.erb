@@ -4,6 +4,8 @@
   <table>
     <thead>
       <tr>
+        <th>Soort cursus</th>
+        <th>Prijs</th>
         <th>Begindatum</th>
         <th>Einddatum</th>
         <% if !current_user.nil? %>
@@ -16,6 +18,8 @@
     <tbody>
       <% @courses.each do |course| %>
         <tr>
+          <td><%= course.soortcourse.cursussoort %></td>
+          <td><%= number_to_currency(course.soortcourse.prijs, :unit => "€") %></td>
           <td><%= course.begindatum %></td>
           <td><%= course.einddatum %></td>
           <% if !current_user.nil? %>
