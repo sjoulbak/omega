@@ -1,0 +1,349 @@
+/* line 1, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/Remco/build/Oefenexamen/omega/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+ * {
+ 	margin:0;
+ 	padding:0;
+ }
+ body {
+ 	font-family:Arial, Helvetica, sans-serif;
+ 	font-size:12px;
+ 	margin: 0;
+ 	padding: 0;
+ 	color: #979797;
+ 	background: url(siteBackground.png) repeat;
+ }
+ ul, ol, dl {
+ 	padding: 0;
+ 	margin: 0;
+ }
+ h1, h2, h3, h4, h5, h6 {
+ 	margin-top: 0;
+ 	color: #d6000f;
+ 	font-size:30px;
+ 	font-weight:normal;
+ 	padding-left:15px;
+ 	padding-right:15px;
+ }
+ h1 {
+   margin-bottom: 10px;
+ }
+ .context {
+   padding-left:15px;
+   padding-right:15px;
+   font-size:18px;
+ }
+ strong {
+ 	color: #d6000f;
+ }
+ p {
+ 	margin-top: 10px;
+ 	margin-bottom:10px;
+ 	padding-left:15px;
+ 	padding-right:15px;
+ }
+ a img {
+ 	border: none;
+ }
+ a {
+ 	color: #d6000f;
+ 	text-decoration: underline;
+ }
+ a:hover, a:active, a:focus {
+ 	color:#d6000f;
+ 	text-decoration: none;
+ }
+ header {
+ }
+ header h1 {
+ 	float:left;
+ 	color:#d6000f;
+ 	padding:30px 0;
+ }
+ .moreLink {
+ 	float:right;
+ 	padding-right: 15px;
+ }
+ .sidebarTextBlock {
+ 	padding-bottom:30px;
+ 	border-bottom:1px solid #7d7d7d;
+ }
+ .sidebarTextBlock span {
+ 	float:left;
+ 	padding-left:15px;
+ 	color:#d6000f;
+ }
+ footer {
+ 	padding: 10px 0;
+ 	position: relative;
+ 	clear: both;
+ 	border-top:1px solid #a4a4a4;
+ 	text-align:center;
+ }
+ .container {
+ 	width: 960px;
+ 	margin: 0 auto;
+ }
+ .sidebar1 {
+ 	float: left;
+ 	width: 199px;
+ 	border-right:1px solid #7d7d7d;
+ }
+ .content {
+ 	padding: 10px 0 0 0;
+ 	width: 760px;
+ 	float: left;
+ }
+ .content li {
+ 	margin:20px;
+ }
+ .pic1 {
+ 	float:left;
+ 	padding:0 30px 10px 15px;
+ }
+ .content ul, .content ol {
+ 	padding: 0 15px 15px 40px;
+ }
+ .clearfloat {
+ 	clear:both;
+ 	height:0;
+ 	font-size: 1px;
+ 	line-height: 0px;
+ }
+ /* ----- MAIN MENU ----- */
+ nav ul {
+ 	padding-left: 0;
+ 	margin:1px 0 30px 0;
+ 	background-color: #1d1d1d;
+ 	float: left;
+ 	width: 100%;
+ 	font-size:24px;
+ 	border-bottom:1px solid #7d7d7d;
+ }
+ nav ul li {
+ 	display: inline;
+ }
+ nav ul li a {
+ 	padding: 20px 20px;
+ 	background-color: #1d1d1d;
+ 	color: #7d7d7d;
+ 	text-decoration: none;
+ 	float: right;
+ }
+ nav ul li #title {
+ 	padding: 20px 20px;
+ 	background-color: #1d1d1d;
+ 	text-decoration: none;
+  color: #d6000f;
+ 	float: right;
+ }
+ nav ul li #notice {
+  padding: 20px 20px;
+  background-color: #1d1d1d;
+  color: green;
+  text-decoration: none;
+  float: left;
+ }
+ nav ul li #alert {
+  padding: 20px 20px;
+  background-color: #1d1d1d;
+  color: red;
+  text-decoration: none;
+  float: left;
+ }
+ nav ul li a:hover {
+ 	background-color: #d6000f;
+ 	color: #fff;
+ }
+ nav ul #active a {
+ 	background-color: #d6000f;
+ 	color: #fff;
+ }
+
+ /* ----- SIDE BAR MENU ----- */
+
+
+ #sidebarmenu ul {
+ 	padding-left: 0;
+ 	margin:1px 0 30px 0;
+ 	background-color: #1d1d1d;
+ 	float: left;
+ 	width: 100%;
+ 	font-size:24px;
+ 	border-bottom:1px solid #7d7d7d;
+ }
+ #sidebarmenu ul li {
+ 	display: inline-block;
+  width: 100%;
+ }
+ #sidebarmenu ul li a {
+ 	/*padding: 20px 20px;*/
+ 	background-color: #1d1d1d;
+ 	color: #7d7d7d;
+ 	text-decoration: none;
+ 	float: left;
+  width: 90%;
+  padding: 20px 0px 20px 20px;
+ }
+ #sidebarmenu ul li a:hover {
+ 	background-color: #d6000f;
+ 	color: #fff;
+ }
+ #sidebarmenu ul #active a {
+ 	background-color: #d6000f;
+ 	color: #fff;
+ }
+ /* ----- MEDIA QUERIES ----- */
+ /* for 980px or less */
+ @media screen and (max-width: 960px) {
+ 	.container {
+ 		width: 95%;
+ 	}
+ 	.content {
+ 		width: 75%;
+ 	}
+ 	.sidebar1 {
+ 		width: 20%;
+ 	}
+ }
+ /* for 768px or less */
+ @media screen and (max-width: 768px) {
+ 	.header {
+ 		height:120px;
+ 	}
+ 	.content {
+ 		width: auto;
+ 		float: none;
+ 	}
+ 	.sidebar1 {
+ 		width: auto;
+ 		float: none;
+ 		border-right:none;
+ 		padding-top:15px;
+ 		clear:both;
+ 	}
+ 	.pic1 {
+ 		float:none;
+ 		text-align:center;
+ 	}
+ }
+ /* for 480px or less */
+ @media screen and (max-width: 480px) {
+ 	.headerTop h1 {
+ 		font-size: 14px;
+ 		padding:20px 0 0 15px;
+ 	}
+ 	h2 {
+ 		font-size:14px;
+ 	}
+ 	nav ul {
+ 		font-size:14px;
+ 	}
+ 	nav ul li a {
+ 		padding: 10px 14px;
+ 	}
+ 	.footer {
+ 		font-size:10px;
+ 	}
+ 	.pic1 {
+ 		float:none;
+ 	}
+ }
+ img {
+ 	max-width: 100%;
+ 	height: auto;
+ 	width: auto;
+ }
