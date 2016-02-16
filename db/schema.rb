@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160119190245) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "course_users", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "user_id"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20160119190245) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "course_users", ["course_id"], name: "index_course_users_on_course_id"
-  add_index "course_users", ["user_id"], name: "index_course_users_on_user_id"
+  add_index "course_users", ["course_id"], name: "index_course_users_on_course_id", using: :btree
+  add_index "course_users", ["user_id"], name: "index_course_users_on_user_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.date     "begindatum"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160119190245) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "courses", ["soortcourse_id"], name: "index_courses_on_soortcourse_id"
+  add_index "courses", ["soortcourse_id"], name: "index_courses_on_soortcourse_id", using: :btree
 
   create_table "soortcourses", force: :cascade do |t|
     t.string   "cursussoort"
@@ -55,6 +58,6 @@ ActiveRecord::Schema.define(version: 20160119190245) do
     t.boolean  "admin",            default: false, null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
