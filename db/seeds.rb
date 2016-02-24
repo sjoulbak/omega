@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 if User.count == 0
   puts 'Seeding the database...'
-  user1 = User.create(email: 'test_gebruiker@omega.nl', password: 'test_gebruiker', password_confirmation: 'test_gebruiker')
-  user2 = User.create(email: 'test_gebruiker2@omega.nl', password: 'test_gebruiker2', password_confirmation: 'test_gebruiker2')
-  User.create(email: 'test_medewerker@omega.nl', password: 'test_medewerker', password_confirmation: 'test_medewerker', admin: true)
+  user1 = User.create(email: 'test_gebruiker@omega.nl', roepnaam: 'Test', achternaam: 'Gbr', password: 'test_gebruiker', password_confirmation: 'test_gebruiker')
+  user2 = User.create(email: 'test_gebruiker2@omega.nl', roepnaam: 'Test2', achternaam: 'Gbr2', password: 'test_gebruiker2', password_confirmation: 'test_gebruiker2')
+  User.create(email: 'test_medewerker@omega.nl', roepnaam: 'Mede', achternaam: 'mwkr', telefoon: '0612345678', password: 'test_medewerker', password_confirmation: 'test_medewerker', admin: true)
 
   soortcourse = Soortcourse.create(cursussoort: 'Beginnerscursus', prijs: 10)
 
