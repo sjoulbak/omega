@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes["password"] }
 
   validates :email, uniqueness: true, presence: true
+  validates :roepnaam, :achternaam, presence: true
+
+  def full_name
+    "#{roepnaam} #{tussenvoegsel} #{achternaam}"
+  end
 end

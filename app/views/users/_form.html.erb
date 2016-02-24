@@ -12,8 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email, "Email (gebruiksnaam)" %><br>
     <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :roepnaam %><br>
+    <%= f.text_field :roepnaam %>
+  </div>
+  <div class="field">
+    <%= f.label :tussenvoegsel %><br>
+    <%= f.text_field :tussenvoegsel %>
+  </div>
+  <div class="field">
+    <%= f.label :achternaam %><br>
+    <%= f.text_field :achternaam %>
+  </div>
+  <div class="field">
+    <%= f.label :adres %><br>
+    <%= f.text_field :adres %>
+  </div>
+  <div class="field">
+    <%= f.label :woonplaats %><br>
+    <%= f.text_field :woonplaats %>
+  </div>
+  <div class="field">
+    <%= f.label :telefoon %><br>
+    <%= f.text_field :telefoon %>
   </div>
   <div class="field">
    <%= f.label :password %><br />
