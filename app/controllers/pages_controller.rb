@@ -7,5 +7,6 @@ class PagesController < ApplicationController
 
   # This method is used for the contacts page
   def contacts
+    @employees = User.where(admin: true)
   end
 end

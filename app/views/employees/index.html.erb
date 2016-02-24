@@ -5,8 +5,12 @@
     <thead>
       <tr>
         <th>Email</th>
-        <th>Crypted password</th>
-        <th>Salt</th>
+        <th>Roepnaam</th>
+        <th>Tussenvoegsel</th>
+        <th>Achternaam</th>
+        <th>Adres</th>
+        <th>Woonplaats</th>
+        <th>Telefoonnummer</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -15,8 +19,12 @@
       <% @employees.each do |employee| %>
         <tr>
           <td><%= employee.email %></td>
-          <td><%= employee.crypted_password %></td>
-          <td><%= employee.salt %></td>
+          <td><%= employee.roepnaam %></td>
+          <td><%= employee.tussenvoegsel %></td>
+          <td><%= employee.achternaam %></td>
+          <td><%= employee.adres %></td>
+          <td><%= employee.woonplaats %></td>
+          <td><%= employee.telefoon %></td>
           <td><%= link_to 'Show', employee %></td>
           <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
           <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
