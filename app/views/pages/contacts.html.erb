@@ -1,1 +1,13 @@
 <h1>Contactenpagina</h1>
+
+<p>
+  Neem contact op met een van onze medewerkers:
+</p>
+
+<p>
+  <% @employees.each do |employee| %>
+    <%= employee.full_name %><br>
+    <%= employee.telefoon %><br>
+    <%= link_to employee.email, "mailto:#{employee.email}" %><br><br>
+  <% end %>
+</p>
