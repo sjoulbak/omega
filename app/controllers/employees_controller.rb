@@ -61,6 +61,6 @@ class EmployeesController < ApplicationController
 
   # This method wil require from params the hash user and permit params to have: email, password, password_confirmation
   def employee_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :roepnaam, :tussenvoegsel, :achternaam, :adres, :woonplaats, :telefoon, :password, :password_confirmation)
   end
 end
